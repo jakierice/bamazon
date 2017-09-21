@@ -86,9 +86,15 @@ var selectProduct = (results) => {
 
 var checkout = (product, quantity) => {
 	connection.query('SELECT * FROM products WHERE product_name = ?', [product], (err, results) => {
-		var orderTotal = Math.round((results[0].price * quantity) * 100) / 100;
-		console.log(`Your order total will be $${orderTotal}`);
-		updateStock(results[0].id, parseInt(quantity));
+		if (results[0].stock_quantity > 0) {
+			var orderTotal = Math.round((results[0].price * quantity) * 100) / 100;
+			console.log(`Your order total will be $${orderTotal}`);
+			updateStock(results[0].id, parseInt(quantity));
+		} else {
+			console.log('OUT OF STOCK');
+			console.log('----------------------------------------');
+			inquireContinueShopping();
+		}
 	});
 };
 
