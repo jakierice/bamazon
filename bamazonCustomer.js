@@ -1,6 +1,5 @@
 const mysql = require('mysql');
 const inquirer = require('inquirer');
-const Table = require('cli-table');
 
 var connection = mysql.createConnection({
 	host: 'localhost',
@@ -40,7 +39,6 @@ var chooseDepartment = (departments) => {
 			choices: departments
 		}
 	]).then((answers) => {
-		// console.log(answers.department);
 		if (answers.department === 'All Products') {
 			showAllProducts();
 		} else {
@@ -65,7 +63,6 @@ var selectProduct = (results) => {
 	var products = [];
 	for (var i = 0; i < results.length; i++) {
 		products.push(results[i].product_name);
-		console.log(results[i].product_name);
 	};
 	inquirer.prompt([
 		{
