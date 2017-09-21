@@ -15,4 +15,4 @@ Bamazon is a simple e-commerce command line tool built using Node.js, inquirer, 
 
 ## Demo:
 The link below is a video demonstrating the Bamazon application.
-###[Bamazon Demo](https://drive.google.com/open?id=0B6PEVpK9j7ZVd0IwckNISnlWS3M)
+### [Bamazon Demo](https://drive.google.com/open?id=0B6PEVpK9j7ZVd0IwckNISnlWS3M)
