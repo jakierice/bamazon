@@ -1,11 +1,13 @@
 const mysql = require('mysql');
 const inquirer = require('inquirer');
 
+const keys = require('./keys');
+
 var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: 'evaunit2',
-	database: 'bamazon_db'
+	host: keys.host,
+	user: keys.user,
+	password: keys.password,
+	database: keys.database
 });
 
 connection.connect((err) => {
